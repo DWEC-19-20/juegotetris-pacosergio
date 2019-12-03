@@ -2,3 +2,12 @@ canvas{
 	display: block;
 	margin:0 auto;
 }
+body{
+    background-color: black;
+    color: white;
+}
+#pSig{
+    position: absolute;
+    top: 5vh;
+    right: 25vw;
+}
