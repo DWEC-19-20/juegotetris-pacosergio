@@ -5,6 +5,7 @@ function setAudio(){
     sonido.setAttribute("hidden","true");
     sonido.setAttribute("autoplay","true");
     sonido.setAttribute("loop","true");
+    sonido.volume = 0.4;
     document.body.appendChild(sonido);
     
 }
