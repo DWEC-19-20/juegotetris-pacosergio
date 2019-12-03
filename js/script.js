@@ -13,10 +13,11 @@ const cvs = document.getElementById("tetris");
 const canvasNext = document.getElementById("pSig");
 const juego = new Juego(cvs, canvasNext);
 document.addEventListener("keydown", juego.control);
-setAudio();
 
 document.getElementById("empezar").addEventListener("click", function(){    
    
+    
+    setAudio();
     juego._tablero.dibujarTableroVacio();
     juego._tablero.dibujarTablero();
     juego.caer();
