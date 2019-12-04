@@ -1,3 +1,5 @@
+const audioOn = false;
+
 function setAudio(){
 
     var sonido = document.createElement("audio");
@@ -6,17 +8,19 @@ function setAudio(){
     sonido.setAttribute("autoplay","true");
     sonido.setAttribute("loop","true");
     sonido.volume = 0.4;
+    audioOn = true;
     document.body.appendChild(sonido);
     
 }
 
-setAudio();
+
 const cvs = document.getElementById("tetris");
 const juego = new Juego(cvs);
 document.addEventListener("keydown", juego.control);
 
 document.getElementById("btComenzar").addEventListener("click", function(){    
-
+    
+    if(!audioOn)setAudio();
     velocidad.innerHTML="Normal";
     juego._tablero.dibujarTableroVacio();
     juego._tablero.dibujarTablero();
