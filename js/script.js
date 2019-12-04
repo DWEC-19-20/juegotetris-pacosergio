@@ -1,4 +1,4 @@
-const audioOn = false;
+const audioOff = true;
 
 function setAudio(){
 
@@ -8,7 +8,7 @@ function setAudio(){
     sonido.setAttribute("autoplay","true");
     sonido.setAttribute("loop","true");
     sonido.volume = 0.4;
-    audioOn = true;
+    audioOff = false;
     document.body.appendChild(sonido);
     
 }
@@ -20,7 +20,7 @@ document.addEventListener("keydown", juego.control);
 
 document.getElementById("btComenzar").addEventListener("click", function(){    
     
-    if(!audioOn)setAudio();
+    if(audioOff)setAudio();
     velocidad.innerHTML="Normal";
     juego._tablero.dibujarTableroVacio();
     juego._tablero.dibujarTablero();
