@@ -10,15 +10,14 @@ function setAudio(){
     
 }
 
+setAudio();
 const cvs = document.getElementById("tetris");
 const juego = new Juego(cvs);
-
 document.addEventListener("keydown", juego.control);
 
 document.getElementById("btComenzar").addEventListener("click", function(){    
-    
-    velocidad.innerHTML="&nbsp;&nbsp;&nbsp;Normal"; 
-    setAudio();
+
+    velocidad.innerHTML="Normal";
     juego._tablero.dibujarTableroVacio();
     juego._tablero.dibujarTablero();
     juego._pieza = juego.piezaAleatoria();

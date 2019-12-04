@@ -132,7 +132,7 @@ class Tablero {
                     
                 }
                 
-                juego.score += 100;
+                juego.score += 10;
                 
             }
             
