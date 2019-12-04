@@ -134,18 +134,19 @@ class Juego {
     }
     
     control = (event) => {
-        if (event.keyCode == 37) {
-            this.pieza.moverIzquierda();
-            this.comenzarCaer = Date.now();
-        } else if (event.keyCode == 38) {
-            this.pieza.rotar();
-            this.comenzarCaer = Date.now();
-        } else if (event.keyCode == 39) {
-            this.pieza.moverDerecha();
-            this.comenzarCaer = Date.now();
-        } else if (event.keyCode == 40) {
-            this.pieza.moverAbajo();
+        if(!this.gameOver){
+            if (event.keyCode == 37) {
+                this.pieza.moverIzquierda();
+                this.comenzarCaer = Date.now();
+            } else if (event.keyCode == 38) {
+                this.pieza.rotar();
+                this.comenzarCaer = Date.now();
+            } else if (event.keyCode == 39) {
+                this.pieza.moverDerecha();
+                this.comenzarCaer = Date.now();
+            } else if (event.keyCode == 40) {
+                this.pieza.moverAbajo();
+            }
         }
     }
-    
 }
