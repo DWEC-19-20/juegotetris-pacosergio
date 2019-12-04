@@ -1,4 +1,4 @@
-const audioOff = true;
+var audioOff = true;
 
 function setAudio(){
 
