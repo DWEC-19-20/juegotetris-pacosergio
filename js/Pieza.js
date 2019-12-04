@@ -1,12 +1,12 @@
 // las piezas y sus colores 
 const PIEZAS = [
-    [Z, "orange"],
-    [S, "cyan"],
-    [T, "green"],
-    [O, "grey"],
-    [L, "purple"],
-    [I, "red"],
-    [J, "yellow"]
+    [Z, "#FF6037"],
+    [S, "#50BFE6"],
+    [T, "#c6e602"],
+    [O, "#AAF0D1"],
+    [L, "#FF00CC"],
+    [I, "#FF355E"],
+    [J, "#FFFF66"]
 ];
 
 // La clase pieza
@@ -140,6 +140,7 @@ class Pieza {
                 
                 if(this.y + f < 0){
                     
+                                   
                     alert("Se acabó");
                     juego.gameOver = true;
                     break;

@@ -3,19 +3,45 @@
 <head>
     <title>Juego Tetris</title>
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
     
-    <canvas id="tetris" width="200" height="400"></canvas>
-    <canvas id="pSig" class="pSig"></canvas>
-    <div>
-        Puntuación : <div id="score">0</div>
-    </div>
-    <div>
-        Record: <div id="record">0</div>
-    </div>
-    <button id="empezar">Comenzar partida</button> 
+        <div class="titulo">
+            <h1>TETRIS</h1>
+        </div>
 
+        <div class="velocidades">
+            <p>Velocidad:</p>
+            <p id="velocidad">Normal</p>
+        </div> 
+         
+        <div class="puntuacion">
+            <div class="actual">
+                <p>Puntuación:</p><span id="score">0</span>
+            </div>
+        </div>
+
+        <div class="records">
+            <div>
+                <p>Record:</p>
+                <p>1º: <span id="record">0</span></p>
+                <p>2º: <span id="record2">0</span></p>
+                <p>3º: <span id="record3">0</span></p>
+                <p>4º: <span id="record4">0</span></p>
+                <p>5º: <span id="record5">0</span></p>
+            </div>
+        </div>
+            
+        <div class="comenzar" id="empezar">
+            <button id="btComenzar">INSERT COIN</button>
+        </div> 
+    
+        <div class="tetris">
+            <canvas id="tetris" width="200" height="400"></canvas>      
+        </div>
+    </div>
     <script src="js/tetrominos.js"></script>
     <script src="js/Pieza.js"></script>
     <script src="js/Tablero.js"></script>

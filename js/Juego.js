@@ -1,12 +1,17 @@
 const puntuacion = document.getElementById("score");
 const record = document.getElementById("record");
+const record2 = document.getElementById("record2");
+const record3 = document.getElementById("record3");
+const record4 = document.getElementById("record4");
+const record5 = document.getElementById("record5");
+const records = [0,0,0,0,0];
+const velocidad = document.getElementById("velocidad");
 
 class Juego {
 
-    constructor(cvs, canvasNext) {
+    constructor(cvs) {
         this.ctx = cvs.getContext("2d");
         this.ctx.clearRect(0,0,200,400);
-        this.ctxNext =  canvasNext.getContext('2d');
         this._tablero = new Tablero(20, 10, 20, this.ctx, this.ctxNext);
         this._pieza = this.piezaAleatoria();
         this.gameOver = false;
@@ -25,14 +30,6 @@ class Juego {
         let aleatorio = (Math.random() * (PIEZAS.length -1)).toFixed(0);
         return new Pieza(aleatorio, this._tablero);
 
-    }
-
-    // Tabla pieza siguiente
-
-    initNext = () => {
-        ctxNext.canvas.width = 4 * 20;
-        ctxNext.canvas.height = 4 * 20;
-        ctxNext.scale(20, 20);
     }
 
     get tablero() {
@@ -66,7 +63,7 @@ class Juego {
     }
     vel = () => {
         
-        let menosTiempo=20;
+        let menosTiempo=100;
         
         if(this.velUp && this.score > 0 && (this.score%100) == 0 && this.score != this.act){
             
@@ -86,10 +83,56 @@ class Juego {
                                     
         }
         
+        if (this.tCaida == 900) {
+            velocidad.innerHTML="x10";
+        } else if(this.tCaida == 800) {
+            velocidad.innerHTML="x20";
+        } else if(this.tCaida == 700) {
+            velocidad.innerHTML="x30";
+        } else if(this.tCaida == 600) {
+            velocidad.innerHTML="x40";
+        } else if(this.tCaida == 500) {
+            velocidad.innerHTML="x50";
+        } else if(this.tCaida == 400) {
+            velocidad.innerHTML="x60";
+        } else if(this.tCaida == 300) {
+            velocidad.innerHTML="x70";
+        } else if(this.tCaida == 200) {
+            velocidad.innerHTML="Máxima";
+        }
+        
         this.velUp=true;
         return this.tCaida;
         
+        
+       
+        
     }
+    
+    pAltas = () => {
+
+        for(let c = 0 ; c < records.length ; c++){
+
+            if(records[c] < this.score){
+         
+                if(records[0] != records[1] || records[c] != records[c-1]){
+                    records[c] = this.score;
+                    break;
+                }
+            }
+
+        }
+
+        records.sort(function(a,b){return a-b});
+
+        record.innerHTML = records[4];
+        record2.innerHTML = records[3];
+        record3.innerHTML = records[2];
+        record4.innerHTML = records[1];
+        record5.innerHTML = records[0];
+
+    }
+    
     control = (event) => {
         if (event.keyCode == 37) {
             this.pieza.moverIzquierda();

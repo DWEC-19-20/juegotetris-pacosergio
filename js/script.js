@@ -1,7 +1,7 @@
 function setAudio(){
 
     var sonido = document.createElement("audio");
-    sonido.setAttribute("src","mp3/Tetris_99.mp4");
+    sonido.setAttribute("src","multimedia/Tetris_99.mp4");
     sonido.setAttribute("hidden","true");
     sonido.setAttribute("autoplay","true");
     sonido.setAttribute("loop","true");
@@ -11,24 +11,21 @@ function setAudio(){
 }
 
 const cvs = document.getElementById("tetris");
-const canvasNext = document.getElementById("pSig");
-const juego = new Juego(cvs, canvasNext);
+const juego = new Juego(cvs);
+
 document.addEventListener("keydown", juego.control);
 
-document.getElementById("empezar").addEventListener("click", function(){    
-   
+document.getElementById("btComenzar").addEventListener("click", function(){    
     
+    velocidad.innerHTML="&nbsp;&nbsp;&nbsp;Normal"; 
     setAudio();
     juego._tablero.dibujarTableroVacio();
     juego._tablero.dibujarTablero();
+    juego._pieza = juego.piezaAleatoria();
     juego.caer();
     juego.score = 0;
+    juego.tCaida = 1000;
     juego.gameOver = false;
     document.getElementById("score").innerHTML = 0;
     
 });
-/*
-function desactiva_boton(boton){
-    boton.disabled='disabled';
-  
-}*/

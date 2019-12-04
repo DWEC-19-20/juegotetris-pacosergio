@@ -4,7 +4,6 @@ class Tablero {
         this.colum = columnas;
         this.TC = tamañoCuadrado;
         this.ctx = ctx;
-        this.ctxNext = ctxNext;
         this.vacio = "BLACK";
         
         this.tablero = [];
@@ -133,7 +132,7 @@ class Tablero {
                     
                 }
                 
-                juego.score += 10;
+                juego.score += 100;
                 
             }
             
@@ -141,8 +140,8 @@ class Tablero {
         
         puntuacion.innerHTML = juego.score;
         
-        if(record.innerHTML < juego.score) record.innerHTML = juego.score;
-        
+        juego.pAltas();
+
     }
 
 }
