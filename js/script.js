@@ -15,19 +15,23 @@ function setAudio(){
 
 
 const cvs = document.getElementById("tetris");
-const juego = new Juego(cvs);
-document.addEventListener("keydown", juego.control);
+const cvsNext = document.getElementById("piezaSiguiente");
+const juego = new Juego(cvs, cvsNext);
 
 document.getElementById("btComenzar").addEventListener("click", function(){    
     
+    document.addEventListener("keydown", juego.control);
     if(audioOff)setAudio();
     velocidad.innerHTML="Normal";
     juego._tablero.dibujarTableroVacio();
     juego._tablero.dibujarTablero();
+    juego.miniTablero.dibujarTableroVacio();
+    juego.miniTablero.dibujarTablero();
     juego._pieza = juego.piezaAleatoria();
     juego.caer();
     juego.score = 0;
     juego.tCaida = 1000;
+    juego.pAltas();
     juego.gameOver = false;
     document.getElementById("score").innerHTML = 0;
     

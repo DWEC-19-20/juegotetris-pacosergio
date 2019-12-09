@@ -101,7 +101,7 @@ class Pieza {
             this.fijar();
             juego._pieza = juego._pSig; 
             juego._pSig = juego.piezaAleatoria();
-            
+
         }
     
     }
@@ -139,10 +139,10 @@ class Pieza {
                 if(!this.aTetro[f][c]) continue;
                 
                 if(this.y + f < 0){
-                    
                                    
                     alert("Se acabó");
                     juego.gameOver = true;
+                    
                     break;
                     
                 }

@@ -1,5 +1,5 @@
 class Tablero {
-    constructor(filas, columnas, tamañoCuadrado, ctx, ctxNext) {
+    constructor(filas, columnas, tamañoCuadrado, ctx) {
         this._fila = filas;
         this.colum = columnas;
         this.TC = tamañoCuadrado;
@@ -37,9 +37,9 @@ class Tablero {
     
     dibujarTablero = () => {
         
-        for(var r = 0 ; r < this.filas ; r++){
+        for(let r = 0 ; r < this.filas ; r++){
             
-            for(var c = 0 ; c < this.columnas ; c++){
+            for(let c = 0 ; c < this.columnas ; c++){
                 
                 this.dibujarCasilla(c, r, this.tablero[r][c]);
                 
@@ -51,9 +51,9 @@ class Tablero {
     
     dibujarTableroVacio = () => {
         
-        for(var r = 0 ; r < this.filas ; r++){
+        for(let r = 0 ; r < this.filas ; r++){
             
-            for(var c = 0 ; c < this.columnas ; c++){
+            for(let c = 0 ; c < this.columnas ; c++){
                 
                 this.tablero[r][c] = this.vacio;
                 

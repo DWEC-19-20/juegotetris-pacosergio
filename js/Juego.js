@@ -4,30 +4,32 @@ const record2 = document.getElementById("record2");
 const record3 = document.getElementById("record3");
 const record4 = document.getElementById("record4");
 const record5 = document.getElementById("record5");
-const records = [0,0,0,0,0];
+var records = [0,0,0,0,0];
 const velocidad = document.getElementById("velocidad");
 
 class Juego {
 
-    constructor(cvs) {
+    constructor(cvs, cvsNext) {
         this.ctx = cvs.getContext("2d");
-        this.ctx.clearRect(0,0,200,400);
-        this._tablero = new Tablero(20, 10, 20, this.ctx, this.ctxNext);
-        this._pieza = this.piezaAleatoria();
+        this._tablero = new Tablero(20, 10, 30, this.ctx);
+        this.ctxNext = cvsNext.getContext("2d");
+        this.miniTablero = new Tablero(5, 5, 30, this.ctxNext);
+        this._pSig = this.piezaAleatoria();
+        this._pSigN;
+        this._pieza = this._pSig;
         this.gameOver = false;
         this._comenzarCaer = Date.now();
         this.score = 0;
         this.tCaida = 1000;
-        this._pSig = this.piezaAleatoria();
         this.velUp = true;
         this.act=0;
-        
     }
 
     // devuelve una pieza aleatoria
     piezaAleatoria = () => {
         
         let aleatorio = (Math.random() * (PIEZAS.length -1)).toFixed(0);
+        this._pSigN = aleatorio;
         return new Pieza(aleatorio, this._tablero);
 
     }
@@ -111,25 +113,28 @@ class Juego {
     
     pAltas = () => {
 
-        for(let c = 0 ; c < records.length ; c++){
-
-            if(records[c] < this.score){
-         
-                if(records[0] != records[1] || records[c] != records[c-1]){
-                    records[c] = this.score;
+        if(juego.gameOver == true){
+            
+            for(let c = 0 ; c < records.length ; c++){
+                
+                if(records[c] < juego.score){
+                    
+                    records[c] = juego.score;
                     break;
+                    
                 }
+                
             }
-
+            
+            let Arecords = records.sort(function(a,b) {return a-b;});
+            
+            record.innerHTML = Arecords[4];
+            record2.innerHTML = Arecords[3];
+            record3.innerHTML = Arecords[2];
+            record4.innerHTML = Arecords[1];
+            record5.innerHTML = Arecords[0];
+            
         }
-
-        records.sort(function(a,b){return a-b});
-
-        record.innerHTML = records[4];
-        record2.innerHTML = records[3];
-        record3.innerHTML = records[2];
-        record4.innerHTML = records[1];
-        record5.innerHTML = records[0];
 
     }
     
@@ -149,4 +154,14 @@ class Juego {
             }
         }
     }
+    
+    dibujarMiniTablero = () => {
+        
+        let miniP = new Pieza(this._pSigN, this.miniTablero);
+        miniP.x=0;
+        miniP.y=0;
+        miniP.dibujar();
+        
+    }
+    
 }
