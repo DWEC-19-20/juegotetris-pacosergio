@@ -24,6 +24,9 @@ body{
     animation-iteration-count: infinite;
 }
 @keyframes cambiarFondo{
+    0%{
+        background-image: url("../multimedia/FondoRetroTetris.jpeg"); 
+    }
     25%{
         background-image: url("../multimedia/Retro\ Arcade1.jpg");
     }
@@ -50,6 +53,8 @@ body{
     display: grid;
     grid-template-columns: 50% 50%; 
     grid-template-rows: 50% 50%; 
+    grid-row-gap: 1vh;
+    grid-column-gap: 1vh;
 }
 #btComenzar{
     grid-row: 1;
