@@ -19,6 +19,23 @@ body{
     "velocidades tetris"
     "actual tetris"
     "records tetris";
+    animation-name: cambiarFondo;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+@keyframes cambiarFondo{
+    25%{
+        background-image: url("../multimedia/Retro\ Arcade1.jpg");
+    }
+    50%{
+        background-image: url("../multimedia/Retro\ Arcade2.jpg");
+    }
+    75%{
+        background-image: url("../multimedia/Retro\ Arcade3.jpg");
+    }
+    100%{
+        background-image: url("../multimedia/FondoRetroTetris.jpeg");
+    }
 }
 .titulo{
     grid-area: title;
