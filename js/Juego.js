@@ -23,6 +23,9 @@ class Juego {
         this.tCaida = 1000;
         this.velUp = true;
         this.act=0;
+        this._pSig.tablero = this.miniTablero;
+        this._pSig.x = 1;
+        this._pSig.y = 1;
     }
 
     // devuelve una pieza aleatoria

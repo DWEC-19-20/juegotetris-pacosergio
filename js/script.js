@@ -28,6 +28,7 @@ document.getElementById("btComenzar").addEventListener("click", function(){
     juego.miniTablero.dibujarTableroVacio();
     juego.miniTablero.dibujarTablero();
     juego._pieza = juego.piezaAleatoria();
+    juego.miniTablero.dibujarTablero();
     juego.caer();
     juego.score = 0;
     juego.tCaida = 1000;
@@ -48,9 +49,10 @@ document.getElementById("btComenzar1").addEventListener("click", function(){
     juego.miniTablero.dibujarTableroVacio();
     juego.miniTablero.dibujarTablero();
     juego._pieza = juego.piezaAleatoria();
+    juego.miniTablero.dibujarTablero();
+    juego._pSig.dibujar();
     juego.caer();
     juego.score = 0;
-    juego.tCaida = 1000;
     juego.pAltas();
     juego.gameOver = false;
     document.getElementById("score").innerHTML = 0;
@@ -68,9 +70,10 @@ document.getElementById("btComenzar2").addEventListener("click", function(){
     juego.miniTablero.dibujarTableroVacio();
     juego.miniTablero.dibujarTablero();
     juego._pieza = juego.piezaAleatoria();
+    juego.miniTablero.dibujarTablero();
+    juego._pSig.dibujar();
     juego.caer();
     juego.score = 0;
-    juego.tCaida = 1000;
     juego.pAltas();
     juego.gameOver = false;
     document.getElementById("score").innerHTML = 0;
@@ -88,9 +91,10 @@ document.getElementById("btComenzar3").addEventListener("click", function(){
     juego.miniTablero.dibujarTableroVacio();
     juego.miniTablero.dibujarTablero();
     juego._pieza = juego.piezaAleatoria();
+    juego.miniTablero.dibujarTablero();
+    juego._pSig.dibujar();
     juego.caer();
     juego.score = 0;
-    juego.tCaida = 1000;
     juego.pAltas();
     juego.gameOver = false;
     document.getElementById("score").innerHTML = 0;
