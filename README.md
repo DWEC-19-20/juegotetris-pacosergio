@@ -28,7 +28,7 @@ Proyecto basado en la recreación del mítico "Tetris", uno de los juegos más p
   2. Cómo usuario querría poder mover las piezas del Tetris rápidamente pulsando flecha abajo una vez elegida donde situar la pieza para que pueda ganar tiempo **Sergio** - **Javier**
   3. Cómo usuario querría poder girar las piezas del Tetris pulsando flecha arriba para que encaje mejor **Javier** - **Francisco**
   4. Cómo usuario querría visualizar mi puntuación y/o lineas desbloqueadas para que sepa si voy a superar un record **Sergio** - **Francisco**
-  5. Cómo usuario querría visualizar la/s siguiente/s pieza/s para que pueda planear donde ponerla **Todavía no conseguido**
+  5. Cómo usuario querría visualizar la/s siguiente/s pieza/s para que pueda planear donde ponerla **Francisco**
   6. Cómo usuario querría visualizar el record más alto para que intente superarlo **Sergio** - **Javier**
   7. Cómo usuario querría aumentar la dificultad aumentando la dificultad para que suponga un reto mayor obtener un record **Sergio** - **Francisco**
   8. Cómo programador analista querría utilizar un canvas HTML5 para que se visualice el array del juego de 10 x 20 **Javier** - **Francisco**
