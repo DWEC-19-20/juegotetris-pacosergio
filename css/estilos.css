@@ -30,11 +30,27 @@ body{
 /* Boton empezar */
 .comenzar {
     grid-area: empezar;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 50% 50%; 
 }
 #btComenzar{
+    grid-row: 1;
+    grid-column: 1;
+}
+#btComenzar1{
+    grid-row: 1;
+    grid-column: 2;
+}
+#btComenzar2{
+    grid-row: 2;
+    grid-column: 1;
+}
+#btComenzar3{
+    grid-row: 2;
+    grid-column: 2;
+}
+#btComenzar, #btComenzar1,#btComenzar2,#btComenzar3{
     background-color: black;
     color: white;
     text-align: center;
@@ -44,14 +60,15 @@ body{
     padding: 2vh 3vw;
     box-shadow: 0.5vw 0.5vh 3vw #fff;
 }
-#btComenzar:hover{
+#btComenzar:hover,#btComenzar1:hover,#btComenzar2:hover,#btComenzar3:hover{
     animation: pulse 1s ease-in forwards;
 }
-#btComenzar:focus{
+#btComenzar:focus, #btComenzar1:focus,#btComenzar2:focus,#btComenzar3:focus{
     animation: pulse 1s ease-in forwards;
     box-shadow: inset 0 0 1vw yellow;
     outline: 0.01px;
 }
+
 @keyframes pulse{
     50%{
         box-shadow: 0.1vw 0.1vh 2vw yellow;

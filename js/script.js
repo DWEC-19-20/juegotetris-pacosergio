@@ -36,3 +36,63 @@ document.getElementById("btComenzar").addEventListener("click", function(){
     document.getElementById("score").innerHTML = 0;
     
 });
+
+document.getElementById("btComenzar1").addEventListener("click", function(){    
+    
+    document.addEventListener("keydown", juego.control);
+    if(audioOff)setAudio();
+    velocidad.innerHTML="x20";
+    juego.tCaida = 800;
+    juego._tablero.dibujarTableroVacio();
+    juego._tablero.dibujarTablero();
+    juego.miniTablero.dibujarTableroVacio();
+    juego.miniTablero.dibujarTablero();
+    juego._pieza = juego.piezaAleatoria();
+    juego.caer();
+    juego.score = 0;
+    juego.tCaida = 1000;
+    juego.pAltas();
+    juego.gameOver = false;
+    document.getElementById("score").innerHTML = 0;
+    
+});
+
+document.getElementById("btComenzar2").addEventListener("click", function(){    
+    
+    document.addEventListener("keydown", juego.control);
+    if(audioOff)setAudio();
+    velocidad.innerHTML="x40";
+    juego.tCaida = 600;
+    juego._tablero.dibujarTableroVacio();
+    juego._tablero.dibujarTablero();
+    juego.miniTablero.dibujarTableroVacio();
+    juego.miniTablero.dibujarTablero();
+    juego._pieza = juego.piezaAleatoria();
+    juego.caer();
+    juego.score = 0;
+    juego.tCaida = 1000;
+    juego.pAltas();
+    juego.gameOver = false;
+    document.getElementById("score").innerHTML = 0;
+    
+});
+
+document.getElementById("btComenzar3").addEventListener("click", function(){    
+    
+    document.addEventListener("keydown", juego.control);
+    if(audioOff)setAudio();
+    velocidad.innerHTML="x60";
+    juego.tCaida = 400;
+    juego._tablero.dibujarTableroVacio();
+    juego._tablero.dibujarTablero();
+    juego.miniTablero.dibujarTableroVacio();
+    juego.miniTablero.dibujarTablero();
+    juego._pieza = juego.piezaAleatoria();
+    juego.caer();
+    juego.score = 0;
+    juego.tCaida = 1000;
+    juego.pAltas();
+    juego.gameOver = false;
+    document.getElementById("score").innerHTML = 0;
+    
+});
