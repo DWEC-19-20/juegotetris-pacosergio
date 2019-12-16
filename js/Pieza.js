@@ -99,11 +99,25 @@ class Pieza {
         else{
             
             this.fijar();
-            juego._pieza = juego._pSig; 
-            juego._pSig = juego.piezaAleatoria();
+            this.cambioPieza();
 
         }
     
+    }
+
+    cambioPieza = () => {
+
+        juego._pieza = juego._pSig;
+        juego._pieza.tablero = juego.tablero;
+        juego._pieza.x = 4;
+        juego._pieza.y = -2;
+        juego._pSig = juego.piezaAleatoria();
+        juego._pSig.tablero = juego.miniTablero;
+        juego._pSig.x = 1;
+        juego._pSig.y = 1;
+        juego.miniTablero.dibujarTablero();
+        juego._pSig.dibujar();
+
     }
 
     // mover derecha la pieza hasta chocar con la pared 

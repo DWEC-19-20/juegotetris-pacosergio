@@ -34,7 +34,7 @@ class Tablero {
     }
 
     // dibujar en el canvas según los colores del tablaro
-    
+
     dibujarTablero = () => {
         
         for(let r = 0 ; r < this.filas ; r++){
